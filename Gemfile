@@ -21,10 +21,6 @@ group :assets do
 
 	# Use CoffeeScript for .js.coffee assets and views
 	gem 'coffee-rails', '~> 4.0.0'
-
-  gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
-
-  gem "twitter-bootstrap-rails"
 end
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
@@ -38,6 +34,10 @@ gem 'turbolinks'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
+
+gem 'less-rails'
+
+gem 'twitter-bootstrap-rails'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
