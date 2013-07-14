@@ -1,5 +1,6 @@
 Poedem::Application.routes.draw do
-  get "users/new"
+  resources :users
+
   get "welcome/index"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -7,16 +8,13 @@ Poedem::Application.routes.draw do
   # You can have the root of your site routed with "root"
   root to: "welcome#index"
 
-  # Example of regular route:
+  match '/signup',  to: 'users#new'  # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
-  resources :users
-
-  match '/signup',  to: 'users#new'
 
   # Example resource route with options:
   #   resources :products do
