@@ -2,14 +2,12 @@ Poedem::Application.routes.draw do
   resources :users
 
   #get "welcome/index"
-  get "users/new"
+  get '/signup', to: 'users#new'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
   root to: 'welcome#index'
-
-  #match '/signup',  to: 'users#new'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

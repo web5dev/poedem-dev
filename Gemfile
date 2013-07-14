@@ -8,6 +8,8 @@ group :development, :test do
 	gem 'sqlite3'
 
   gem 'rspec-rails'
+  gem 'capybara'
+  gem 'factory_girl_rails'
 end
 
 group :development do
