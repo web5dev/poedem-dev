@@ -59,7 +59,7 @@
               <li class="dropdown">
                 <a class="dropdown-toggle" href="#" data-toggle="dropdown">Вход<strong class="caret"></strong></a>
                 <div class="dropdown-menu" style="padding: 15px; padding-bottom: 0px;">
-                    <%= form_for(@user) do |f| %>
+                    <%= form_for(:session, url: sessions_path) do |f| %>
                         <%= f.text_field :email, placeholder: "E-mail", style: "margin-bottom: 15px;" %>
                         <%= f.password_field :password,  placeholder: "Пароль", style: "margin-bottom: 15px;" %>
 

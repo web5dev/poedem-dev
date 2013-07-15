@@ -20,8 +20,8 @@ describe "User pages" do
     describe "with valid information" do
       before do
         fill_in "Имя",                with: "Example User"
-        fill_in "E-mail",             with: "user@example.com"
-        fill_in "Пароль",             with: "foobar"
+        fill_in "Электронная почта",  with: "user@example.com"
+        fill_in "Пароль для входа",   with: "foobar"
         fill_in "Подтвердите пароль", with: "foobar"
         fill_in "Номер телефона",     with: "1234567"
       end
