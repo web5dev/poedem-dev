@@ -60,13 +60,10 @@
                 <a class="dropdown-toggle" href="#" data-toggle="dropdown">Вход<strong class="caret"></strong></a>
                 <div class="dropdown-menu" style="padding: 15px; padding-bottom: 0px;">
                     <%= form_for(@user) do |f| %>
-                        <%= f.label :email, "E-mail" %>
-                        <%= f.text_field :email %>
+                        <%= f.text_field :email, placeholder: "E-mail", style: "margin-bottom: 15px;" %>
+                        <%= f.password_field :password,  placeholder: "Пароль", style: "margin-bottom: 15px;" %>
 
-                        <%= f.label :password, "Пароль" %>
-                        <%= f.password_field :password %>
-
-                        <%= f.submit "Войти", class: "btn btn-primary" %>
+                        <%= f.submit "Войти", class: "btn btn-primary", style: "clear: left; width: 100%; height: 32px; font-size: 13px;" %>
                     <% end %>
                 </div>
               </li>
