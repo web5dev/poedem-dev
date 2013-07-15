@@ -48,6 +48,7 @@
           <a class="brand" href="<%= root_path %>">Poedem</a>
           <div class="container-fluid nav-collapse">
             <ul class="nav">
+              <li class="divider-vertical"></li>
               <li><%= link_to "Link1", "/path1"  %></li>
               <li><%= link_to "Link2", "/path2"  %></li>
               <li><%= link_to "Link3", "/path3"  %></li>
@@ -58,7 +59,15 @@
               <li class="dropdown">
                 <a class="dropdown-toggle" href="#" data-toggle="dropdown">Вход<strong class="caret"></strong></a>
                 <div class="dropdown-menu" style="padding: 15px; padding-bottom: 0px;">
-                  <!-- Login form here -->
+                    <%= form_for(@user) do |f| %>
+                        <%= f.label :email, "E-mail" %>
+                        <%= f.text_field :email %>
+
+                        <%= f.label :password, "Пароль" %>
+                        <%= f.password_field :password %>
+
+                        <%= f.submit "Войти", class: "btn btn-primary" %>
+                    <% end %>
                 </div>
               </li>
             </ul>
