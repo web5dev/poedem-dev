@@ -10,6 +10,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
+      sign_in @user
       flash[:success] = "Приветствуем в Poedem!"
       redirect_to @user
     else
@@ -19,7 +20,7 @@ class UsersController < ApplicationController
 
   private
 
-  def user_params
-    params.require(:user).permit(:name, :email, :password, :password_confirmation, :phone)
-  end
+    def user_params
+      params.require(:user).permit(:name, :email, :password, :password_confirmation, :phone)
+    end
 end

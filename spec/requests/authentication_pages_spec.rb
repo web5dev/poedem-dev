@@ -1,6 +1,9 @@
 require 'spec_helper'
 
 describe "Authentication" do
+
+  subject { page }
+
   describe "signin" do
     before { visit signin_path }
 
@@ -25,10 +28,17 @@ describe "Authentication" do
         click_button "Войти"
       end
 
-      it { should have_selector('title', text: user.name) }
-      it { should have_link('Profile', href: user_path(user)) }
-      it { should have_link('Sign out', href: signout_path) }
-      it { should_not have_link('Sign in', href: signin_path) }
+      before { click_link user.email }
+
+      it { should have_title(user.name) }
+      it { should have_link('Мой профиль', href: user_path(user)) }
+      it { should have_link('Выход', href: signout_path) }
+      it { should_not have_link('Вход') }
+
+      describe "followed by signout" do
+        before { click_link "Выход" }
+        it { should have_link('Вход') }
+      end
     end
   end
 end
